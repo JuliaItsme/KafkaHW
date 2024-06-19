@@ -1,0 +1,1 @@
+Metrics Consumer - сервис принимает метрики из Kafka топика "metrics-topic" и сохраняет их в БД.

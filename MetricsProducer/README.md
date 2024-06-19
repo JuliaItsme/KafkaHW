@@ -1,0 +1,1 @@
+Metrics Producer - сервис собирает метрики и отправляет их в Kafka топик "metrics-topic"
