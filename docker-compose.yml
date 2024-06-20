@@ -1,6 +1,11 @@
 version: '3'
 
 services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+
   kafka:
     image: wurstmeister/kafka
     ports:
@@ -13,17 +18,3 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-  metric-producer:
-    image: wurstmeister/zookeeper
-    container_name: metric-producer
-    restart: always
-    ports:
-      - "2181:2181"
-
-  metric-consumer:
-    image: wurstmeister/zookeeper
-    container_name: metric-consumer
-    restart: always
-    ports:
-      - "2182:2182"
